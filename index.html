@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Information</title>
+<body> 
+    <title>Welcome To My Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,35 +10,5 @@
         .info {
             margin: 10px 0;
         }
-    </style>
-</head>
-<body>
-    <h1>System Information</h1>
-    <div class="info"><strong>CPU Name:</strong> <span id="cpuName">Loading...</span></div>
-    <div class="info"><strong>CPU Cores:</strong> <span id="cpuCores">Loading...</span></div>
-    <div class="info"><strong>Total RAM:</strong> <span id="totalRAM">Loading...</span></div>
-    <div class="info"><strong>Free RAM:</strong> <span id="freeRAM">Loading...</span></div>
-    <div class="info"><strong>HD Space:</strong> <span id="hdSpace">Loading...</span></div>
-    <div class="info"><strong>CPU Speed:</strong> <span id="cpuSpeed">Loading...</span></div>
-
-    <script>
-        async function fetchSystemInfo() {
-            const cpuName = await fetch('http://localhost:3000/getCPUName').then(res => res.text());
-            const cpuCores = await fetch('http://localhost:3000/getCPUCores').then(res => res.text());
-            const totalRAM = await fetch('http://localhost:3000/getTotalRAM').then(res => res.text());
-            const freeRAM = await fetch('http://localhost:3000/getFreeRAM').then(res => res.text());
-            const hdSpace = await fetch('http://localhost:3000/getHDSpace').then(res => res.text());
-            const cpuSpeed = await fetch('http://localhost:3000/getCPUSpeed').then(res => res.text());
-
-            document.getElementById('cpuName').innerText = cpuName;
-            document.getElementById('cpuCores').innerText = cpuCores;
-            document.getElementById('totalRAM').innerText = totalRAM;
-            document.getElementById('freeRAM').innerText = freeRAM;
-            document.getElementById('hdSpace').innerText = hdSpace;
-            document.getElementById('cpuSpeed').innerText = cpuSpeed;
-        }
-
-        fetchSystemInfo();
-    </script>
 </body>
 </html>
